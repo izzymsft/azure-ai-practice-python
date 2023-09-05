@@ -37,7 +37,7 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
 )
 
-question = "Who is Israel Ekpo?"
+question = "How do I travel to Contoso Islands and how is the minister for tourism?"
 
 # Perform a hybrid search
 docs = vector_store.similarity_search(query=question, k=3, search_type="hybrid")
