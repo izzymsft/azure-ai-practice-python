@@ -23,7 +23,7 @@ vector_store: AzureSearch = AzureSearch(
 llm = ChatOpenAI(model_name=llm_name, temperature=0, model_kwargs={"deployment_id": llm_name})
 
 # Build prompt
-template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "Thanks for asking! We are glad Tres Nubes could be of service!" at the end of the answer. 
+template = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer. Use three sentences maximum. Keep the answer as concise as possible. Always say "Thanks for asking! We are glad GPS Americas could be of service!" at the end of the answer. 
 {context}
 Question: {question}
 Helpful Answer:"""
@@ -37,7 +37,7 @@ qa_chain = RetrievalQA.from_chain_type(
     chain_type_kwargs={"prompt": QA_CHAIN_PROMPT}
 )
 
-question = "How is the minister of defense for Contoso Islands? Where does the president and vice president live?"
+question = "How is the minister of agriculture for Contoso Islands? Where does the president and vice president live?"
 
 # Perform a hybrid search
 docs = vector_store.similarity_search(query=question, k=3, search_type="hybrid")
